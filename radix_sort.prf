@@ -3952,7 +3952,7 @@
                       nil))
                     nil))
                   nil)
-                 ("2" (postpone) nil nil))
+                 ("2" (assert) nil nil))
                 nil))
               nil))
             nil))
@@ -3987,18 +3987,23 @@
      integers nil)
     (list type-decl nil list_adt nil)
     (PRED type-eq-decl nil defined_types nil)
+    (every adt-def-decl "boolean" list_adt nil)
     (AND const-decl "[bool, bool -> bool]" booleans nil)
     (IMPLIES const-decl "[bool, bool -> bool]" booleans nil)
     (is_sorted_ud? const-decl "bool" radix_sort nil)
     (radixsort def-decl "list[nat]" radix_sort nil)
     (+ const-decl "[numfield, numfield -> numfield]" number_fields nil)
     (= const-decl "[T, T -> boolean]" equalities nil)
-    (merge_sort_d_sorts formula-decl nil radix_sort nil)
     (posint_plus_nnint_is_posint application-judgement "posint"
      integers nil)
-    (merge_sort def-decl "list[nat]" radix_sort nil)
+    (merge_sort_d_sorts formula-decl nil radix_sort nil)
+    (real_le_is_total_order name-judgement "(total_order?[real])"
+     real_props nil)
+    (x!1 skolem-const-decl "nat" radix_sort nil)
+    (x!2 skolem-const-decl "{d: nat | d <= x!1}" radix_sort nil)
     (real_lt_is_strict_total_order name-judgement
-     "(strict_total_order?[real])" real_props nil))
+     "(strict_total_order?[real])" real_props nil)
+    (merge_sort def-decl "list[nat]" radix_sort nil))
    shostak))
  (radixsort_permutes 0
   (radixsort_permutes-1 nil 3748006034
